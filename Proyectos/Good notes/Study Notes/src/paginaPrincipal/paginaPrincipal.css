@@ -1,0 +1,273 @@
+/* ==================== ESTILO GENERAL ==================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fffdf9;
+  touch-action: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.contenedor {
+  position: relative; 
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==================== CONTENEDOR secundario ==================== */
+.contenedorSecundario {
+  position: absolute; 
+  top: 0%;
+  left:15%;
+  width: 85vw;
+  height: 100vh;
+  background-color: #fffdf9;
+
+}
+
+/* ==================== CONTENEDOR secundario ==================== */
+.contnedorDeElementos {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 70vw;
+  height: 75vh;
+  background-color: #fffdf9;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  align-items: start;     /* <— items se alinean arriba */
+  
+  padding: 1rem;
+  overflow-y: auto;
+     /* Estado oculto por defecto */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+
+    /* Transición común */
+    transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out,
+                visibility 0s 0.5s;
+}
+
+.contnedorDeElementos::-webkit-scrollbar {
+  display: none;
+}
+
+.contnedorDeElementos.active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0%);
+    transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out,
+                visibility 0s 0s;
+}
+
+#contenedorDeCarpetas{
+
+  background-color: aqua;
+}
+
+#contenedorDeNotas{
+
+  background-color: rgb(214, 105, 32);
+}
+.icono {
+      flex: 0 0 auto;     
+      width: 15vw;
+      height: 15vh;
+      background: url("../../Imegenes/archivero.jpg") 
+                  center/contain no-repeat;
+    }
+
+.icono_vacio {
+  flex: 0 0 auto;    
+  width: 15vw;
+  height: 15vh;
+  background: url("../../Imegenes/archiveroVacio.jpg") 
+              center/contain no-repeat;
+}
+
+.icono_medio {
+  flex: 0 0 auto;    
+  width: 15vw;
+  height: 15vh;
+  background: url("../../Imegenes/archiveroMedio.jpg") 
+              center/contain no-repeat;
+}
+
+
+
+.archivador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra los hijos (.icono y .nombre) horizontalmente */
+  width: 10vw;
+  height: 23vh;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(172,166,166,0.5);
+  cursor: pointer;
+}
+.archivador:hover {
+  box-shadow: 4px 4px 15px rgba(172,166,166,0.7); /* Más pronunciado */
+
+ transform: scale(1.02); 
+  transition: all 0.2s ease-in-out; 
+}
+
+
+.nombre {
+  /* Propiedades de Fuente y Color */
+ font-family: 'Satisfy', cursive; /* O 'Lora', 'Playfair Display', 'EB Garamond' */
+  font-size: 1vw;
+  line-height: 1.4em; /* Define la altura de cada línea */
+  color: #022b5f;
+  background: #fdfdfd;
+  word-break: break-word; /* Permite que las palabras largas se rompan */
+  
+  /* Márgenes y Padding (Espaciado) */
+  margin: 0.5em 0; /* Margen superior e inferior para separar del icono */
+  padding: 0 0.7em; /* ¡Espacio a los lados! Ajusta '0.7em' si quieres más o menos */
+
+  /* Centrado del Texto Interno (cada línea) */
+  text-align: center; 
+
+  /* --- ¡PROPIEDADES CLAVE PARA ELLIPSIS MULTILÍNEA EN ELECTRON! --- */
+  display: -webkit-box;        /* Fundamental para que -webkit-line-clamp funcione */
+  -webkit-line-clamp: 2;       /* El texto se limitará a 2 líneas */
+  -webkit-box-orient: vertical;/* Necesario con -webkit-line-clamp */
+  overflow: hidden;            /* Oculta cualquier contenido que se desborde */
+  text-overflow: ellipsis;     /* ¡Añade los puntos suspensivos (...) automáticamente! */
+
+  /* Puedes quitar estas propiedades si las tenías antes, ya no son necesarias: */
+  /* position: relative; */
+  /* max-height: calc(1.4em * 2); (sustituido por -webkit-line-clamp) */
+}
+
+
+
+
+/* ==================== CONTENEDOR secundario ==================== */
+.barraLateral {
+  position: absolute; 
+  top: 14%;
+  left:2%;
+  width:20vw;
+  height: 80vh;
+  background-color: #022b5f;
+  border-radius: 25px;
+  box-shadow: 3px 3px 15px rgb(172, 166, 166);
+
+}
+/* ==================== Boton añadir ==================== */
+.botonCrear {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    width: 4vw;
+    height: 8vh;
+    background-image: url("../../Imegenes/crear.jpg");
+     background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border: none;
+    cursor: pointer;
+}
+
+/* ==================== titulo archiveros ==================== */
+.misArchiveros {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 40vw;
+  height: 15vh;
+  font-size: 5vw;
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-style:italic;
+  color: #022b5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/* ==================== titulo archiveros ==================== */
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 40vw;
+  height: 15vh;
+  font-size: 2vw;
+  font-family: 'Pacifico', cursive;
+  font-weight: 500;
+  color: #fdfdfd;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.menu {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+.menu-icon-img {
+    width: 10%;
+    height: 10%;
+    
+}
+
+.menu-item {
+  font-size: 1vw;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  text-decoration: none; /* Para los <a> */
+  cursor: pointer;
+}
+
+.opcion{
+  width: 10vw;
+  padding: 5%;
+  border-radius: 15px;
+  background-color: #022b5f;
+}
+.opcion:hover{
+
+  background-color: #2f5383;
+    box-shadow: 4px 4px 15px rgba(8, 9, 80, 0.7); /* Más pronunciado */
+
+ transform: scale(1.1); 
+  transition: all 0.2s ease-in-out; 
+}
+

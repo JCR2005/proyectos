@@ -1,0 +1,177 @@
+/* ==================== ESTILO GENERAL ==================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fffdf9;
+  touch-action: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.contenedor {
+  position: relative; 
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==================== CONTENEDOR secundario ==================== */
+.contenedorSecundario {
+  position: absolute; 
+  top: 0%;
+  left:15%;
+  width: 85vw;
+  height: 100vh;
+  background-color: #fffdf9;
+
+}
+
+/* ==================== CONTENEDOR secundario ==================== */
+ .contenedorDeCarptetas {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 70vw;
+      height: 60vh;
+      background-color: #fffdf9;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      align-items: start;     /* <— items se alinean arriba */
+      
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    /* CADA ITEM (archivador) */
+.carpeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 10vw;
+    height: 23vh;     
+    padding: 5px;
+    background:#fdfdfd;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px rgb(172, 166, 166);
+    cursor: pointer;
+}
+
+.icono {
+      flex: 0 0 auto;     
+      width: 15vw;
+      height: 15vh;
+      background: url("../../Imegenes/carpetaLlena.jpg") 
+                  center/contain no-repeat;
+    }
+
+.icono_vacio {
+  flex: 0 0 auto;    
+  width: 15vw;
+  height: 15vh;
+  background: url("../../Imegenes/carpetaVacia.jpg") 
+              center/contain no-repeat;
+}
+
+.icono_medio {
+  flex: 0 0 auto;    
+  width: 15vw;
+  height: 15vh;
+  background: url("../../Imegenes/carpeta.jpg") 
+              center/contain no-repeat;
+}
+
+.nombre {
+  margin-top: 10px;
+  font-family: 'Satisfy', sans-serif;
+   font-style: normal;
+  font-size: 1.1vw;
+  color: #022b5f;
+  text-align: center;
+  margin: 10px;
+   
+  line-height: 1em;                      /* Altura de línea */
+  height: calc(1em * 3);                 /* Altura para 3 líneas */
+  overflow: hidden;                        /* Oculta lo que se desborda */
+  text-overflow: ellipsis;                /* Muestra puntos suspensivos */
+  white-space: normal;                     /* Permite múltiples líneas */
+  word-break: break-word;                 /* Rompe palabras largas */
+}
+
+
+
+
+/* ==================== Boton añadir ==================== */
+.botonCrear {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 4vw;
+    height: 8vh;
+    background-image: url("../../Imegenes/crear.jpg");
+     background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border: none;
+    cursor: pointer;
+}
+
+/* ==================== titulo archiveros ==================== */
+.misCarpetas{
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  width: 40vw;
+  height: 15vh;
+  font-size: 5vw;
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-style:italic;
+  color: #022b5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/* ==================== titulo archiveros ==================== */
+.logo {
+  position: absolute;
+  top: 7%;
+  left: 38%;
+  width: 40vw;
+  height: 15vh;
+  font-size: 2vw;
+  font-family: 'Pacifico', cursive;
+  font-weight: 500;
+  color: #fdfdfd;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.botonMisCarpetas {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 15vw;
+  height: 15vh;
+  font-size: 2vw;
+  font-family: 'Pacifico', cursive;
+  font-weight: 500;
+  color: #fdfdfd;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}

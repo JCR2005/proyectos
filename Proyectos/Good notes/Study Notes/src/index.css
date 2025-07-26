@@ -1,0 +1,105 @@
+/* ==================== ESTILO GENERAL ==================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fffdf9;
+  touch-action: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ==================== LIENZO ==================== */
+canvas {
+  display: block;
+  background: #fff;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.contenedor {
+  position: relative; 
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==================== CONTENEDOR secundario ==================== */
+.contenedorSecundario {
+  position: absolute; 
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #022b5f;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+
+}
+
+
+
+/* ==================== PANEL IMAGEN DE INICIO ==================== */
+.panelImagenInicio {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+  width: 80vw;
+  height: 100vh;
+
+  background-image: url("../Imegenes/paginaPrincipal.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ==================== Boton iniciar ==================== */
+.botonIniciar {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 20vw;
+  height: 8vh;
+  font-size: 3vw;
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  color: #fdfdfd;
+  background: #022b5f;
+  border-radius: 50px;
+  box-shadow: 2px 2px 10px rgb(172, 166, 166);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+     transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.botonIniciar.oculto{
+ transform: translateX(100%);
+  opacity: 0;
+
+}
+.panelImagenInicio.oculto {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.contenedorSecundario.oculto{
+ transform: translateX(100%);
+  opacity: 0;
+
+}
